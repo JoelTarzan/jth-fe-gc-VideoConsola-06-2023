@@ -22,10 +22,26 @@ body {
     width: 400px;
     height: 700px;
     background-color: #55ABC4;
+    background-image: url(./../img/noise.png);
+    background-size: 1%;
+    background-repeat: repeat;
     border-radius: 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    box-shadow: 0px 0px 20px 1px;
+}
+
+.console::before {
+    content: "";
+    position: absolute;
+    bottom: -28px;
+    width: 95%;
+    height: 120px;
+    background-color: #55ABC4;
+    border-radius: 100%;
+    z-index: -1;
+    box-shadow: 3px 2px 20px 0px;
 }
 
 .console::after {
@@ -37,6 +53,9 @@ body {
     background-color: #55ABC4;
     border-radius: 100%;
     z-index: 1;
+    background-image: url(./../img/noise.png);
+    background-size: 1%;
+    background-repeat: repeat;
 }
 
 /* COMM */
@@ -63,13 +82,14 @@ body {
     width: 90%;
     height: 300px;
     background-color: rgb(32, 32, 32);
+    border-radius: 10px;
 }
 
 .screen-outside::after {
     content: "";
     position: absolute;
-    bottom: -18px;
-    width: 100%;
+    bottom: -15px;
+    width: 99%;
     height: 40px;
     background-color: rgb(32, 32, 32);
     border-radius: 100%;
@@ -81,7 +101,8 @@ body {
     grid-row: 2 / 2;
     height: 100%;
     width: 100%;
-    background-color: white;
+    background: linear-gradient(135deg, rgba(254,254,254,1) 0%, rgba(254,254,254,1) 28%, rgba(219,219,219,1) 74%, rgba(209,209,209,1) 79%, rgba(209,209,209,1) 100%);
+    box-shadow: inset 0px -2px 3px 8px;
 }
 
 .screen-inside-left {
@@ -142,6 +163,30 @@ body {
     letter-spacing: -3px;
 }
 
+.color-text {
+    font-size: 25px;
+}
+
+#color-c {
+    color: deeppink;
+}
+
+#color-o {
+    color: slateblue;
+}
+
+#color-l {
+    color: greenyellow;
+}
+
+#color-o2 {
+    color: gold;
+}
+
+#color-r {
+    color: darkcyan;
+}
+
 /* LOGO DE NINTENDO */
 .nintendo-logo {
     width: 90%;
@@ -185,22 +230,61 @@ span {
     color: gray;
 }
 
-.cross-top {
+.cross-top-left {
+    grid-row: 1 / 1;
+    grid-column: 1 / 1;
+    border-right: 2px inset gray;
+    border-bottom: 2px inset gray;
+    box-shadow: inset -1px -1px 1px 0px;
+}
+
+.cross-top-center {
     grid-row: 1 / 1;
     grid-column: 2 / 2;
     background-color: lightgray;
     display: flex;
     justify-content: center;
     align-items: center;
+    border-top: 2px outset gray;
+    box-shadow: 0px -1px 1px 0px;
 }
 
-.cross-middle {
+.cross-top-right {
+    grid-row: 1 / 1;
+    grid-column: 3 / 4;
+    border-left: 2px inset gray;
+    border-bottom: 2px outset gray;
+}
+
+.cross-middle-left {
     grid-row: 2 / 2;
-    grid-column: 1 / 4;
+    grid-column: 1 / 1;
     background-color: lightgray;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    border-left: 2px outset gray;
+    box-shadow: -1px 0px 1px 0px;
+}
+
+.cross-middle-center {
+    grid-row: 2 / 2;
+    grid-column: 2 / 3;
+    background-color: lightgray;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.cross-middle-right {
+    grid-row: 2 / 2;
+    grid-column: 3 / 4;
+    background-color: lightgray;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-right: 2px outset gray;
+    box-shadow: 3px 7px 3px 0px;
 }
 
 #arrow-left {
@@ -211,13 +295,31 @@ span {
     transform: rotate(90deg);
 }
 
-.cross-bottom {
+.cross-bottom-left {
+    grid-row: 3 / 3;
+    grid-column: 1 / 1;
+    border-top: 2px outset gray;
+    border-right: 2px inset gray;
+    box-shadow: inset -1px 1px 1px 0px;
+}
+
+.cross-bottom-center {
     grid-row: 3 / 3;
     grid-column: 2 / 2;
     background-color: lightgray;
     display: flex;
     justify-content: center;
     align-items: center;
+    border-bottom: 2px outset gray;
+    box-shadow: 5px 3px 3px 0px;
+}
+
+.cross-bottom-right {
+    grid-row: 3 / 3;
+    grid-column: 3 / 4;
+    border-top: 2px inset gray;
+    border-left: 2px inset gray;
+    box-shadow: inset 3px 3px 3px 0px;
 }
 
 #arrow-bottom {
@@ -245,7 +347,8 @@ span {
     font-size: 40px;
     font-stretch: condensed;
     background-color: gray;
-    box-shadow: 5px 5px 10px 0px;
+    box-shadow: 1px 1px 3px 0px;
+    border: 1px outset rgb(71, 71, 71);
 }
 
 .a-button {
@@ -292,6 +395,7 @@ span {
     width: 35px;
     background-color: gray;
     border-radius: 40%;
+    border: 1px outset black;
 }
 /* BOTONERA INFERIOR - ALTAVOZ */
 .speaker-container {
